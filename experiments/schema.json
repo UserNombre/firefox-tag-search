@@ -1,0 +1,35 @@
+[
+    {
+        "namespace": "experiments.tags",
+        "description": "Tags",
+        "functions": [
+            {
+                "name": "getURIsForTags",
+                "type": "function",
+                "async": true,
+                "description": "This method retrieves all URIs set for the given tags.",
+                "parameters": [
+                    {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "getTagsForURI",
+                "type": "function",
+                "async": true,
+                "description": "This method retrieves all tags set for the given URI.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "name": "URI",
+                        "description": "The URI for which to return the tags."
+                    }
+                ]
+            }
+        ]
+    }
+]

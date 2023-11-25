@@ -1,0 +1,43 @@
+{
+    "manifest_version": 2,
+    "version": "1.0",
+    "name": "firefox-tag-search",
+    "description": "Search Firefox bookmarks by multiple tags",
+    "permissions": ["storage", "tabs", "bookmarks"],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "firefox-tag-search@test"
+        }
+    },
+
+    "background": {
+        "scripts": ["src/background.js"],
+        "persistent": true,
+        "type": "module"
+    },
+
+    "sidebar_action": {
+        "default_title" : "Bookmark tags",
+        "default_panel": "src/sidebar.html",
+        "default_icon": "src/assets/tag.svg"
+    },
+
+    "commands": {
+        "_execute_sidebar_action": {
+            "suggested_key": {
+                "default": "F2"
+            }
+        }
+    },
+
+    "experiment_apis": {
+        "tags": {
+            "schema": "experiments/schema.json",
+            "parent": {
+                "scopes": ["addon_parent"],
+                "script": "experiments/api.js",
+                "paths": [["experiments", "tags"]]
+            }
+        }
+    }
+}

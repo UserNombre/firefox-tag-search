@@ -1,0 +1,121 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#main-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#tag-container {
+    padding: 1em;
+    background-color: #38383d;
+    color: #d8d8da;
+}
+
+#bookmark-container {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    background-color: #38383d;
+}
+
+.bookmark {
+    display: block;
+    padding: 0.3em 0.3em 0.3em 1em;
+    white-space: nowrap;
+    overflow: clip;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    color: #d8d8da;
+    cursor: pointer;
+}
+
+.bookmark:hover {
+    background-color: #434347;
+    color: #d8d8da;
+}
+
+.bookmark:active {
+    background-color: #4c4c51;
+    outline: 2px dotted #f3d982;
+    outline-offset: -2px;
+}
+
+.bookmark .tooltip {
+    position: absolute;
+    z-index: 1;
+    visibility: hidden;
+    width: auto;
+    margin: 0.5em 2em;
+    padding: 0.5em;
+    white-space: pre-line;
+    background-color: #2b2a33;
+    color: #d8d8da;
+    border: 1px solid white;
+    border-radius: 4px;
+    transition-property: visibility;
+    transition-delay: 0.0s;
+}
+
+.bookmark:hover .tooltip {
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.bookmark:active .tooltip {
+    visibility: hidden;
+}
+
+/*
+Tagify CSS
+https://github.com/yairEO/tagify/tree/master#css-variables
+*/
+
+:root {
+    --tagify-dd-bg-color: #2b2a33;
+    --tagify-dd-color-primary: #434347;
+}
+
+tags {
+    width: 100%;
+    height: 2.6em;
+    overflow: hidden auto;
+    scrollbar-width: thin;
+    scroll-snap-type: y mandatory;
+    border-radius: 4px;
+}
+
+tag {
+    scroll-snap-align: center;
+}
+
+.tagify {
+    background-color: #2b2a33;
+    border-radius: 0px;
+    --tags-border-color: #75747a;
+    --tags-hover-border-color: #b1b1b9;
+    --tag-pad: 0.1em 0.2em;
+    --tag-bg: #38383d;
+    --tag-hover: #434347;
+    --tag-text-color: #d8d8da;
+    --input-color: #d8d8da;
+    --placeholder-color: #66666a;
+    --placeholder-color-focus: #66666a;
+}
+
+.tagify--focus {
+    --tags-border-color: #d8d8da;
+}
+
+.tagify__dropdown {
+    border: 1px solid #66666a;
+    border-radius: 0px;
+    color: #d8d8da;
+}
+
+.tagify__dropdown__item {
+    margin: 0.3em;
+}
